@@ -1,4 +1,4 @@
-# Generator Passwords
+# Generator of passwords
 
 import random
 import string
@@ -13,35 +13,34 @@ def gen_password(length=6, use_uppercase=True, use_digits=True, use_special=True
     :param use_special: Incluir caracteres especiales (default: True).
     :return: Contraseña generada.
     """
-    
-# Conjunt of base caracters: lower words
-characters = string.ascii_lowercase
+    # Conjunto de caracteres base: letras minúsculas
+    characters = string.ascii_lowercase
 
-# Conjunt of base caracters: up words
-if use_uppercase:
-    characters += string.ascii_uppercase
-    
-# Add digits for this necesary
-if use_digits:
-    characters += string.digits
+    # Conjunto de caracteres base: letras mayúsculas
+    if use_uppercase:
+        characters += string.ascii_uppercase
 
-# Add special caracters for this necesary
-if use_special:
-    characters += string.punctuation
-    
-# the password has a minimun 1 character
-if length < 6:
-    raise ValueError(" La longitud de la contrasela debe de ser de al menos 6 dígitos ")
+    # Agregar dígitos si es necesario
+    if use_digits:
+        characters += string.digits
 
-# Generate the password
-password = ''.join(random.choice(characters) for i in range(length))
-return password
+    # Agregar caracteres especiales si es necesario
+    if use_special:
+        characters += string.punctuation
 
-# Example of use
-if __name__ == "__genPass__":
-    #longitud de la contraseña
+    # La contraseña debe tener al menos 6 caracteres
+    if length < 6:
+        raise ValueError("La longitud de la contraseña debe ser de al menos 6 caracteres")
+
+    # Generar la contraseña
+    password = ''.join(random.choice(characters) for i in range(length))
+    return password  # <-- Este return ahora está correctamente indentado dentro de la función
+
+    # Ejemplo de uso
+if __name__ == "__main__":
+    # Longitud de la contraseña
     password_length = 6
 
-# Generate to the password
-password = gen_password(password_length)
+    # Generar la contraseña
+    password = gen_password(password_length)
 print(f"La contraseña generada es: {password}")
