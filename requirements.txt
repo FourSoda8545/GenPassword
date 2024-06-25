@@ -1,2 +1,4 @@
-random
-string
+cryptography>=3.4.8
+argparse>=1.1
+
+
