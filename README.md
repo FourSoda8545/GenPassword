@@ -22,3 +22,7 @@ GenPassword es un generador de contraseñas seguras escrito en Python. Permite g
    ```bash
    git clone https://github.com/FourSoda8545/GenPassword.git
 
+## Idea por:
+
+- [FourSoda8545](https://github.com/FourSoda8545)
+- puntobat -
